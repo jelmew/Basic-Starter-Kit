@@ -17,6 +17,7 @@ find_library(WPI_LIB wiringPi HINTS ${WPI_PATH} NO_CMAKE_FIND_ROOT_PATH)
 #endif()
 # Add all the *.c files in our source directory to our executable output
 FILE(GLOB SRC_FILES src/*.cpp)
-add_executable(blink ${SRC_FILES})
+FILE(GLOB HEADER_FILES src/*.h)
+add_executable(blink ${SRC_FILES} ${HEADER_FILES})
 # Link the pre-compiled wiringPi library to the executable we just declared 
 target_link_libraries(blink ${WPI_LIB})

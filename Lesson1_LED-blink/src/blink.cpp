@@ -9,23 +9,19 @@
 #include <wiringPi.h>
 #include <cstdio>
 #include <iostream>
+#include "led.h"
 
 constexpr int LED_PIN{0};
 
 int main() {
 
-    std::cout << "Welcome to Elecrow..." << std::endl;
     std::cout << "Raspberry Pi blink program..." << std::endl;
     std::cout << "Press Ctrl+C to exit\n..." << std::endl;
     wiringPiSetup();
-    pinMode(LED_PIN, OUTPUT);
+    led led1(LED_PIN);
     for (int i = 0; i < 100; ++i) {
-        digitalWrite(LED_PIN, HIGH);
-        delay(1000);
-        digitalWrite(LED_PIN, LOW);
-        delay(1000);
+        led1.switchLight();
+        delay(0500);
     }
-
-    digitalWrite(LED_PIN,LOW);
 }
 
