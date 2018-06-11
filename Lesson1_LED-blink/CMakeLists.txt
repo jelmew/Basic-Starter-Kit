@@ -1,3 +1,5 @@
+# Build using cmake . -DCMAKE_TOOLCHAIN_FILE=Toolchain-rpi.cmake
+
 cmake_minimum_required (VERSION 3.0)
 # Name our project
 project (blink)
