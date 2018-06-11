@@ -12,7 +12,7 @@
 
 constexpr int LED_PIN{0};
 
-int main(void) {
+int main() {
 
     std::cout << "Welcome to Elecrow..." << std::endl;
     std::cout << "Raspberry Pi blink program..." << std::endl;
@@ -26,6 +26,6 @@ int main(void) {
         delay(1000);
     }
 
-    digitalWrite(LED_PIN,LOW)
+    digitalWrite(LED_PIN,LOW);
 }
 
