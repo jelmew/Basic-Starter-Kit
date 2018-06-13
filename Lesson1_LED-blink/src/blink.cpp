@@ -9,6 +9,7 @@
 #include <wiringPi.h>
 #include <cstdio>
 #include <iostream>
+#include <thread>
 #include "led.h"
 
 constexpr int LED_PIN{0};
@@ -20,8 +21,9 @@ int main() {
     wiringPiSetup();
     led led1(LED_PIN);
     for (int i = 0; i < 100; ++i) {
+        std::cout << "Switch " ;
         led1.switchLight();
-        delay(0500);
+        std::this_thread::sleep_for(std::chrono::milliseconds(500));
     }
 }
 

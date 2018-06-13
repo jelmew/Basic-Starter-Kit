@@ -6,7 +6,7 @@
 #define BLINK_LED_H
 
 #include <wiringPi.h>
-
+#include <iostream>
 class led {
 private:
     const int LED_PIN;

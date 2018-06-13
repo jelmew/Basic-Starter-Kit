@@ -11,10 +11,12 @@ led::led(const int ledPin) : LED_PIN(ledPin),lightOn(false)  {
 void led::switchLight() {
     lightOn = !lightOn;
     if (lightOn) {
+        std::cout<<"On"<<std::endl;
         turnLightOn();
         return;;
     } else {
-        turnLightOn();
+        std::cout<<"Of"<<std::endl;
+        turnLightOff();
     }
 }
 
